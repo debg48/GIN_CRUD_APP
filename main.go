@@ -1,19 +1,12 @@
 package main
 
 import (
-	"log"
-
+	"github.com/debg48/gin_crud/initializers"
 	"github.com/gin-gonic/gin"
-	"github.com/joho/godotenv"
 )
 
 func init() {
-	err := godotenv.Load()
-	if err != nil {
-		log.Fatal("Error loading .env file")
-	}
-
-	// s3Bucket := os.Getenv("S3_BUCKET")
+	initializers.LoadEnvVaraibles()
 }
 
 func main() {
