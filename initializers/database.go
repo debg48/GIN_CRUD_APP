@@ -1,7 +1,6 @@
 package initializers
 
 import (
-	"fmt"
 	"log"
 	"os"
 
@@ -17,7 +16,6 @@ func ConnectToDB() {
 	DB, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	if err != nil {
 		log.Fatal("DB connection failed")
-	} else {
-		fmt.Println(DB)
 	}
+	_ = DB
 }
